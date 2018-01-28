@@ -145,7 +145,12 @@ input{
 .nav_box:last-child{
 	padding-right: 0;
 }
+.nav_word .nav_box.nav_box_active{
+	background: yellow;
+}
 .nav_box a{
+	display: block;
+	width: 100%;
 	font-size: 16px;
 	color: #606060;
 	text-align: center;
@@ -154,15 +159,56 @@ input{
 .nav_box:hover a{
 	color: #FF6700;
 }
-.nav_xuan{
+.nav_word .nav_xuan{
 	width: 100%;
-	height: 230px;
+	height: 201px;
 	background: yellow;
 	border-top: 1px solid #E0E0E0;
+	padding-bottom: 28px;
 	position: absolute;
 	top: 140px;
 	left: 0;
 	z-index: 20;
+}
+.nav_xuan .xuan_center{
+	width: 1220px;
+	height: 201px;
+	background: pink;
+	margin:0 auto;
+	display: flex;
+}
+.nav_xuan .xuan_center li{
+	width: 180px;
+	height: 171px;
+	margin: 29px 12px 0;
+	background: yellowgreen;
+	border-right: 1px solid #E0E0E0;
+	text-align: center;
+}
+.nav_xuan .xuan_center li:last-child{
+	border: none;
+}
+.nav_xuan .xuan_center li a{
+	display: block;
+	width: 160px;
+	height: 145px;
+	background: beige;
+	margin: 0 auto;
+	text-align: center;
+}
+.nav_xuan .xuan_center li a img{
+	width: 160px;
+	height: 110px;
+	margin-bottom: 12px;
+}
+.nav_xuan .xuan_center li a span{
+	font-size: 10px;
+	color: #1B1B1B;
+}
+.nav_xuan .xuan_center li div{
+	font-size: 10px;
+	color: #ff6700;
+	margin-top: 5px;
 }
 .nav_search{
 	width: 296px;
@@ -227,7 +273,6 @@ input{
 .serch_right:hover{
 	background: url('../img/sousuo1.png') no-repeat center center rgba(255, 103, 0, 1.0);
 	background-size: 18px 18px;
-
 }
 /* .serch_box i:hover{
 	color: #fff;
@@ -238,8 +283,7 @@ input{
 	width: 1226px;
 	height: 460px;
 	background: red;
-	margin: 0 auto;
-	margin-bottom: 14px;
+	margin: 0 auto 14px;
 	position: relative;
 }
 .banner_img{
@@ -249,6 +293,19 @@ input{
 	background: yellow;
 }
 /* banner图片 */
+.banner_img li{
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.banner_img li.active{
+	display: block;
+}
+.banner_img li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 .banner_img img{
 	width: 100%;
 	height: 100%;
@@ -291,6 +348,88 @@ input{
 	float: right;
 	line-height: 42px;
 	margin-right: 24px;
+}
+.banner_none{
+	width: 795px;
+	height: 460px;
+	background: yellow;
+	position: absolute;
+	left: 234px;
+	top: 0px;
+	z-index: 9999;
+}
+.banner_none .none_one{
+	width: 265px;
+	height: 460px;
+	background: pink;
+	float: left;
+}
+.banner_none .none_one li{
+	width: 265px;
+	height: 76px;
+	background: red;
+}
+.banner_none .none_one li a{
+	display: block;
+	padding: 18px 20px;
+	box-sizing: border-box;
+	background: yellowgreen;
+	line-height: 40px;
+}
+.banner_none .none_one li a img{
+	width: 40px;
+	height: 40px;
+	margin-right: 12px;
+	float: left;
+}
+.banner_none .none_one li a span{
+	font-size: 12px;
+	color:#333;
+	float: left;
+}
+.banner_none .none_one li a:hover span{
+	color: #ff6700;
+}
+.banner_full{
+	width: 993px;
+	height: 460px;
+	background: yellow;
+	position: absolute;
+	left: 234px;
+	top: 0px;
+	z-index: 9999;
+}
+.banner_full .full_one{
+	width: 248px;
+	height: 460px;
+	background: pink;
+	float: left;
+}
+.banner_full .full_one li{
+	width: 265px;
+	height: 76px;
+	background: red;
+}
+.banner_full .full_one li a{
+	display: block;
+	padding: 18px 20px;
+	box-sizing: border-box;
+	background: yellowgreen;
+	line-height: 40px;
+}
+.banner_full .full_one li a img{
+	width: 40px;
+	height: 40px;
+	margin-right: 12px;
+	float: left;
+}
+.banner_full .full_one li a span{
+	font-size: 12px;
+	color:#333;
+	float: left;
+}
+.banner_full .full_one li a:hover span{
+	color: #ff6700;
 }
 /* banner轮播点 */
 .banner_button{
@@ -573,10 +712,10 @@ input{
 .jiadian{
 	width: 1226px;
 	height: 672px;
-	margin: 0 auto;
+	margin: 60px auto;
 	background: #F5F5F5;
-	margin-top: 60px;
-	margin-bottom: 22px;
+	/*margin-top: 60px;*/
+	/*margin-bottom: 22px;*/
 }
 .jiadian_title{
 	width: 100%;
@@ -590,26 +729,23 @@ input{
 	color: #000;
 	line-height: 58px;
 }
-.title_R{
+.title_R {
 	width: 270px;
 	height: 100%;
 	float: right;
 }
 .right_title{
+	width: 30px;
+	height: 19px;
 	font-size: 15px;
 	color: #424242;
 	margin-left: 30px;
 	text-align: center;
 	line-height: 60px;
 	padding-bottom: 5px;
-	
 }
-.right_title:first-child{
+a.active_{
 	margin-left: 15px;
-	color: #FF6700;
-	border-bottom: 2px solid #FF6700;
-}
-.right_title:hover{
 	color: #FF6700;
 	border-bottom: 2px solid #FF6700;
 }
@@ -637,8 +773,11 @@ input{
 .jiadian_right{
 	width: 978px;
 	height: 614px;
-	background: #F5F5F5;
 	float: right;
+	display: none;
+}
+.jiadian_right.active_{
+	display: block;
 }
 .jiadian_box{
 	width: 234px;
@@ -713,8 +852,7 @@ input{
 	display: block;
 	width: 150px;
 	height: 156px;
-	margin: 0 auto;
-	margin-top: 34px;
+	margin: 34px auto 0;
 }
 .jiadian_img img{
 	display: block;
@@ -833,8 +971,7 @@ input{
 .shopping{
 	width: 1226px;
 	height: 686px;
-	margin: 0 auto;
-	margin-bottom: 8px;
+	margin: 0 auto 8px;
 	background: #F5F5F5;
 }
 .shopping_title{
@@ -863,11 +1000,7 @@ input{
 	line-height: 50px;
 	padding-bottom: 5px;
 }
-.right_word:first-child{
-	color: #FF6700;
-	border-bottom: 2px solid #FF6700;
-}
-.right_word:hover{
+.right_word.active_{
 	color: #FF6700;
 	border-bottom: 2px solid #FF6700;
 }
@@ -906,6 +1039,10 @@ input{
 	height: 614px;
 	background: #F5F5F5;
 	float: right;
+	display: none;
+}
+.shopping_right.active_{
+	display: block;
 }
 .shopping_box{
 	width: 234px;
@@ -979,8 +1116,7 @@ input{
 	display: block;
 	width: 150px;
 	height: 156px;
-	margin: 0 auto;
-	margin-top: 34px;
+	margin: 34px auto 0;
 }
 .box_img img{
 	display: block;
@@ -1109,8 +1245,7 @@ del{
 .tuijian{
 	width: 1226px;
 	height: 358px;
-	margin: 0 auto;
-	margin-bottom: 22px;
+	margin: 0 auto 22px;
 }
 .tuijian_top{
 	width: 100%;
@@ -1187,8 +1322,7 @@ del{
 	display: block;
 	width: 140px;
 	height: 140px;
-	margin: 0 auto;
-	margin-top: 40px; 
+	margin: 40px auto 0;
 }
 .tuijian_title{
 	display: block;
@@ -1214,8 +1348,7 @@ del{
 .reping{
 	width: 1226px;
 	height: 473px;
-	margin: 0 auto;
-	margin-bottom: 35px;
+	margin: 0 auto 35px;
 }
 .reping_title{
 	width: 100%;
@@ -1292,8 +1425,7 @@ del{
 .neirong{
 	width: 1226px;
 	height: 478px;
-	margin: 0 auto;
-	margin-bottom: 22px;
+	margin: 0 auto 22px;
 }
 .neirong_title{
 	width: 100%;
@@ -1363,11 +1495,10 @@ del{
 	display: block;
 	width: 200px;
 	height: 40px;
-	margin: 0 auto;
+	margin: 0 auto 7px;
 	font-size: 12px;
 	color: #B0B0B0;
 	text-align: center;
-	margin-bottom: 7px;
 }
 .neirong_jiage{
 	display: block;
@@ -1378,9 +1509,7 @@ del{
 .neirong_img{
 	width: 216px;
 	height: 154px;
-	margin: 0 auto;
-	margin-top: 12px;
-	margin-bottom: 29px;
+	margin: 12px auto 29px;
 }
 .neirong_img img{
 	width: 216px;
@@ -1420,8 +1549,7 @@ del{
 .shipin{
 	width: 1226px;
 	height: 343px;
-	margin: 0 auto;
-	margin-bottom: 60px;
+	margin: 0 auto 60px;
 }
 .shipin_title{
 	width: 100%;
@@ -1660,7 +1788,7 @@ del{
 .fuwu_right{
 	width: 254px;
 	height: 112px;
-	background: ;
+	background: #fff;
 	float: right;
 	border-left: 1px solid #ccc;
 	text-align: center;
@@ -1685,8 +1813,7 @@ del{
 	height: 28px;
 	background: #fff;
 	border: 1px solid #ff6700;
-	margin: 0 auto;
-	margin-top: 13px;
+	margin: 13px auto 0;
 	line-height: 26px;
 }
 .fuwu_right .fuwu_time:hover{
@@ -1713,8 +1840,7 @@ del{
 .over{
 	width: 1226px;
 	height: 106px;
-	margin: 0 auto;
-	margin-bottom: 30px;
+	margin: 0 auto 30px;
 }
 .over_top{
 	width: 1226px;
@@ -1810,8 +1936,7 @@ del{
 .over_bottom{
 	width: 280px;
 	height: 20px;
-	margin: 0 auto;
-	margin-top: 29px;
+	margin: 29px auto 0;
 }
 .over_bottom div{
 	font-size: 20px;
