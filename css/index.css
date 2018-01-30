@@ -282,7 +282,6 @@ input{
 .banner{
 	width: 1226px;
 	height: 460px;
-	background: red;
 	margin: 0 auto 14px;
 	position: relative;
 }
@@ -290,16 +289,21 @@ input{
 	width: 1226px;
 	height: 460px;
 	margin: 0 auto;
-	background: yellow;
 }
 /* banner图片 */
 .banner_img li{
 	width: 100%;
 	height: 100%;
-	display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+	opacity: 0;
 }
 .banner_img li.active{
-	display: block;
+	opacity: 1;
+}
+.banner_img li.z{
+    z-index: 100;
 }
 .banner_img li a{
 	display: block;
@@ -309,9 +313,6 @@ input{
 .banner_img img{
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 /* banner 侧导航*/
 .banner_nav{
@@ -322,6 +323,7 @@ input{
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 200;
 }
 .banner_nav li{
 	width: 234px;
@@ -352,28 +354,28 @@ input{
 .banner_none{
 	width: 795px;
 	height: 460px;
-	background: yellow;
+	background: #fff;
+	border-top: 1px solid #ccc;
 	position: absolute;
 	left: 234px;
 	top: 0px;
-	z-index: 9999;
+	z-index: 999;
+	box-shadow: 0 3px 25px 2px rgba(0, 0, 0, 0.1);
 }
 .banner_none .none_one{
-	width: 265px;
+	width: 260px;
 	height: 460px;
-	background: pink;
 	float: left;
 }
 .banner_none .none_one li{
 	width: 265px;
 	height: 76px;
-	background: red;
+	background: #fff;
 }
 .banner_none .none_one li a{
 	display: block;
 	padding: 18px 20px;
 	box-sizing: border-box;
-	background: yellowgreen;
 	line-height: 40px;
 }
 .banner_none .none_one li a img{
@@ -393,7 +395,6 @@ input{
 .banner_full{
 	width: 993px;
 	height: 460px;
-	background: yellow;
 	position: absolute;
 	left: 234px;
 	top: 0px;
@@ -402,19 +403,17 @@ input{
 .banner_full .full_one{
 	width: 248px;
 	height: 460px;
-	background: pink;
 	float: left;
 }
 .banner_full .full_one li{
 	width: 265px;
 	height: 76px;
-	background: red;
+	background: #fff;
 }
 .banner_full .full_one li a{
 	display: block;
 	padding: 18px 20px;
 	box-sizing: border-box;
-	background: yellowgreen;
 	line-height: 40px;
 }
 .banner_full .full_one li a img{
@@ -438,8 +437,9 @@ input{
 	position: absolute;
 	right: 35px;
 	bottom: 25px;
+	z-index: 300;
 }
-.banner_button a{
+.banner_button span{
 	width: 6px;	
 	height: 6px;	
 	background: rgba(0, 0, 0, .5);
@@ -448,10 +448,10 @@ input{
 	float: left;
 	margin-right: 10px;
 }
-.banner_button a:last-child{
+.banner_button span:last-child{
 	margin-right: 0;
 }
-.banner_button a:hover{
+.banner_button span.active{
 	border: 2px solid #fff;
 }
 /* banner左键 */
@@ -462,6 +462,7 @@ input{
 	position: absolute;
 	top: 0;
 	bottom: 0;
+	z-index: 100;
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: 234px;
@@ -487,6 +488,7 @@ input{
 	margin-top: auto;
 	margin-bottom: auto;
 	right: 0;
+	z-index: 100;
 }
 .banner_right:hover{
 	background: rgba(0, 0, 0, .5);
@@ -730,7 +732,7 @@ input{
 	line-height: 58px;
 }
 .title_R {
-	width: 270px;
+	width: 285px;
 	height: 100%;
 	float: right;
 }
@@ -745,7 +747,7 @@ input{
 	padding-bottom: 5px;
 }
 a.active_{
-	margin-left: 15px;
+	margin-left: 30px;
 	color: #FF6700;
 	border-bottom: 2px solid #FF6700;
 }
@@ -1001,6 +1003,7 @@ a.active_{
 	padding-bottom: 5px;
 }
 .right_word.active_{
+	margin-left: 25px;
 	color: #FF6700;
 	border-bottom: 2px solid #FF6700;
 }
