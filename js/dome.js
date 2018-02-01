@@ -144,16 +144,17 @@ window.onload=function () {
     xuan('.peijian .right_word', '#peijian .shopping_right');
     xuan('.zhoubian .right_word', '#zhoubian .shopping_right');
 // 单品选项卡
-    let left_j = document.querySelector(".left_jiantou");
-    // console.log(left_j)
-    let right_j = document.querySelector(".right_jiantou");
-    // console.log(right_j)
     let danpin = document.querySelectorAll(".danpin_bottom");
     // console.log(danpin);
     let boxx = document.querySelector(".danpin");
     // console.log(boxx);
+    let left_j = document.querySelector(".left_jiantou");
+    console.log(left_j)
+    let right_j = document.querySelector(".right_jiantou");
+    // console.log(right_j)
     let now =0;
     let next = 0;
+    let flag1 = true;
     let width = parseInt(getComputedStyle(boxx,null).width);
     console.log(width);
     function dan() {
@@ -165,8 +166,9 @@ window.onload=function () {
         // 盒子出现
         animate(danpin[now], {left: -width},500);
         // 接下来的盒子出现
-        animate(danpin[next], {left: 0}, 500);
-
+        animate(danpin[next], {left: 0}, 500,function () {
+            flag1 = true;
+        });
         now =next;
     }
     let sh =setInterval(dan,4000);
@@ -177,7 +179,29 @@ window.onload=function () {
         sh =setInterval(dan,4000);
     }
     right_j.onclick =function () {
+        if(!flag1){
+            return
+        }
+        flag1 = false;
         dan();
+    }
+    left_j.onclick = function () {
+        if(!flag1){
+            return
+        }
+        flag1 = false;
+        next = now -1;
+        if (next < 0) {
+            next = danpin.length-1;
+        }
+        danpin[next].style.left = "-100%";
+        // 盒子出现
+        animate(danpin[now], {left: width},500);
+        // 接下来的盒子出现
+        animate(danpin[next], {left: 0}, 500,function () {
+            flag1 = true;
+        });
+        now =next;
     }
 
 //     内容
