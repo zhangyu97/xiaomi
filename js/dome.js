@@ -2,22 +2,37 @@
 
 window.onload=function () {
 // 选项卡
-//     let nav = document.querySelectorAll(".nav_word .nav_box");
-//     // console.log(nav);
-//     let non = document.querySelector(".nav_xuan");
-//     // console.log(non);
-//     let content = document.querySelectorAll(".xuan_center");
-//     // console.log(content);
-//     nav.forEach(function (vl,id) {
-//         vl.onmousemove = function () {
-//             nav.forEach(function (dm,xi) {
-//                 dm.classList.remove("active");
-//                 // non[xi].style.display='none';
-//             })
-//             nav[id].classList.add("active");
-//             // non[id].style.display = 'block';
-//         }
-//     })
+
+    let nav = document.querySelectorAll(".rr");
+    console.log(nav);
+    let non = document.querySelector(".nav_xuan");
+    console.log(non);
+    let content = document.querySelectorAll(".xuan_center");
+    console.log(content);
+    nav.forEach(function (vl,ide) {
+        vl.onmousemove = function () {
+            nav.forEach(function (dm,xi) {
+                dm.classList.remove("active");
+                non.style.display="none"
+                content[xi].style.display="none";
+            })
+            nav[ide].classList.add("active");
+            non.style.display="block"
+            content[ide].style.display="block";
+        }
+        vl.onmouseout = function () {
+            nav.forEach(function (dm,xi) {
+                dm.classList.remove("active");
+                non.style.display="none"
+            })
+        }
+    })
+    non.onmousemove = function () {
+        non.style.display="block";
+    }
+    non.onmouseout = function () {
+        non.style.display="none";
+    }
 
 // banner
     let ban = document.querySelector(".banner");
@@ -180,7 +195,7 @@ window.onload=function () {
     }
     right_j.onclick =function () {
         if(!flag1){
-            return
+            return;
         }
         flag1 = false;
         dan();
@@ -196,7 +211,9 @@ window.onload=function () {
         }
         danpin[next].style.left = "-100%";
         // 盒子出现
-        animate(danpin[now], {left: width},500);
+        animate(danpin[now], {left: width},500,function () {
+            flag1 = true;
+        });
         // 接下来的盒子出现
         animate(danpin[next], {left: 0}, 500,function () {
             flag1 = true;

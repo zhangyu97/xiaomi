@@ -128,7 +128,7 @@ input{
 	margin-top: 22px;
 }
 .nav_word{
-	width: 596px;
+	width: auto;
 	height: 100px;
 	float: left;
 	margin-left: 189px;
@@ -162,44 +162,56 @@ input{
 .nav_word .nav_xuan{
 	width: 100%;
 	height: 201px;
-	background: yellow;
+	background: #fff;
 	border-top: 1px solid #E0E0E0;
 	padding-bottom: 28px;
 	position: absolute;
 	top: 140px;
 	left: 0;
-	z-index: 20;
+	z-index: 990;
+	/*display: none;*/
+}
+.nav_word .nav_xuan.active{
+	/*display: block;*/
 }
 .nav_xuan .xuan_center{
-	width: 1220px;
+	width: 1226px;
 	height: 201px;
-	background: pink;
-	margin:0 auto;
-	display: flex;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	margin: auto;
+}
+.nav_xuan .xuan_center.block{
+	display: block;
 }
 .nav_xuan .xuan_center li{
-	width: 180px;
+	width: 185px;
 	height: 171px;
-	margin: 29px 12px 0;
-	background: yellowgreen;
-	border-right: 1px solid #E0E0E0;
+	margin: 29px 10px 0;
 	text-align: center;
+	float: left;
+}
+.nav_xuan .xuan_center li:first-child{
+	margin-left: 0;
 }
 .nav_xuan .xuan_center li:last-child{
-	border: none;
+	margin-right: 0;
 }
 .nav_xuan .xuan_center li a{
 	display: block;
 	width: 160px;
 	height: 145px;
-	background: beige;
 	margin: 0 auto;
 	text-align: center;
 }
 .nav_xuan .xuan_center li a img{
 	width: 160px;
 	height: 110px;
+	padding-right: 20px;
 	margin-bottom: 12px;
+	border-right: 1px solid #E0E0E0;
 }
 .nav_xuan .xuan_center li a span{
 	font-size: 10px;
@@ -650,7 +662,7 @@ input{
 	font-size: 10px;
 	color: #E0E0E0;
 }
-.left_jiantou.active:hover i{
+.left_jiantou:hover i{
 	color: #ff6700;
 }
 .right_jiantou:hover i{
