@@ -20,10 +20,10 @@ window.onload=function () {
     let non = document.querySelector(".nav_xuan");
     console.log(non);
     nav_word.onmouseover = function () {
-        animate(non,{height:229,overflow:"none"},500);
+        animate(non,{height:229,overflow:"none",borderTop: "1px solid #E0E0E0"},500);
     }
     nav_word.onmouseout = function () {
-        animate(non,{height:0,overflow:"hidden"},500);
+        animate(non,{height:0,overflow:"hidden",borderTop:"none"},500);
     }
     let nav = document.querySelectorAll(".nav_box");
     console.log(nav);
@@ -36,16 +36,15 @@ window.onload=function () {
                 content[xi].style.display="none";
             })
             nav[ide].classList.add("active");
-            // nav[ide].style.color="#ff6700";
             content[ide].style.display="block";
             nav[5].onmousemove = function () {
-                animate(non,{height:0,overflow:"hidden"},500);
+                animate(non,{height:0,overflow:"none"},200);
             }
             nav[8].onmousemove = function () {
-                animate(non,{height:0,overflow:"hidden"},500);
+                animate(non,{height:0,overflow:"none"},200);
             }
             nav[9].onmousemove = function () {
-                animate(non,{height:0,overflow:"hidden"},500);
+                animate(non,{height:0,overflow:"none"},200);
             }
         }
     })
